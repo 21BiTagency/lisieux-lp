@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Residenza Lisieux | Albignasego (PD) — Nuova costruzione Classe A4 | Tettorosso</title>
+  <meta name="description" content="Residenza Lisieux ad Albignasego (PD), quartiere San Giacomo, Via Santa Teresa di Lisieux. 10 unità di nuova costruzione Classe A4. Ampi soggiorni open space, terrazze abitabili, fotovoltaico, riscaldamento a pavimento, VMC.">
+
+  <meta name="robots" content="noindex, nofollow">
+
+  <meta property="og:title" content="Residenza Lisieux — Albignasego (PD)">
+  <meta property="og:description" content="10 unità di nuova costruzione Classe A4. Ampi soggiorni open space e terrazze abitabili.">
+  <meta property="og:image" content="https://lisieux.pages.dev/assets/img/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:url" content="https://lisieux.pages.dev/">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Residenza Lisieux — Albignasego (PD)">
+  <meta name="twitter:description" content="10 unità di nuova costruzione Classe A4. Ampi soggiorni open space e terrazze abitabili.">
+  <meta name="twitter:image" content="https://lisieux.pages.dev/assets/img/og-image.jpg">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="canonical" href="https://lisieux.pages.dev/">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script defer src="https://unpkg.com/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.2/src/lite-yt-embed.min.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Figtree', 'system-ui', 'sans-serif'] },
+          colors: {
+            brand: {
+              red:     '#E73C3E',
+              redDark: '#C8302C',
+              dark:    '#3C3C3C',
+              darker:  '#1A1A1A',
+              gray:    '#F5F4F0',
+              border:  '#E5E5E5'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    [x-cloak] { display: none !important; }
+    body { font-family: 'Figtree', system-ui, sans-serif; }
+    .energy-row { transition: width 0.6s ease-out; }
+
+    /* Lite-youtube — riempi tutto il box e centra il poster */
+    lite-youtube {
+      width: 100% !important;
+      height: 100% !important;
+      max-width: none !important;
+      background-position: center center !important;
+      background-size: cover !important;
+    }
+    lite-youtube::before {
+      background-position: center center !important;
+      background-size: cover !important;
+    }
+
+    /* Footer agency rows — replica Tettorosso (struttura div + overlay link, no nested anchors) */
+    .agency-row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      color: inherit;
+    }
+    .agency-row__overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      text-indent: -9999px;
+      overflow: hidden;
+    }
+    .agency-row__overlay:hover ~ .agency-arrow {
+      background: #fff;
+      color: #D32D1F;
+    }
+    .agency-desc a {
+      position: relative;
+      z-index: 2;
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .agency-desc a:hover { opacity: 0.85; }
+    .agency-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      line-height: 1;
+      margin: 0;
+    }
+    .agency-desc {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      flex: 1;
+    }
+    .agency-arrow {
+      flex-shrink: 0;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      border: 2px solid #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    .agency-row:hover .agency-arrow {
+      background: #fff;
+      color: #D32D1F;
+    }
+    @media (min-width: 768px) {
+      .agency-row {
+        flex-direction: row;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 0;
+      }
+      .agency-title {
+        min-width: 280px;
+        font-size: 1.875rem;
+      }
+      .agency-arrow { width: 3.5rem; height: 3.5rem; }
+    }
+    @media (min-width: 1024px) {
+      .agency-title { min-width: 320px; }
+    }
+
+    /* Footer end (social + copy + logo) */
+    .footer-end {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      position: relative;
+    }
+    .footer-end ul { list-style: none; margin: 0; padding: 0; }
+    @media (min-width: 768px) {
+      .footer-end {
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+      }
+      .footer-end .footer-logo {
+        position: absolute;
+        top: -0.5rem;
+        right: 0;
+        margin: 0;
+      }
+      .footer-end .footer-social {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  </style>
+</head>
+<body class="font-sans text-brand-dark bg-white antialiased">
+
+  <!-- ============================================
+       6.1 — HEADER / NAVBAR
+       ============================================ -->
+  <header class="sticky top-0 z-40 bg-white border-b border-brand-border">
+    <div class="container mx-auto px-4 lg:px-8 h-16 flex items-center justify-between">
+      <a href="https://www.tettorossoimmobiliare.it" target="_blank" rel="noopener" class="flex items-center" aria-label="Tettorosso Immobiliare">
+        <img src="/assets/img/logo-tettorosso.svg" alt="Tettorosso Immobiliare" class="h-7 lg:h-9 w-auto">
+      </a>
+      <nav class="flex items-center gap-4 lg:gap-6">
+        <a href="https://www.tettorossoimmobiliare.it" target="_blank" rel="noopener"
+           class="hidden sm:inline text-sm font-medium hover:text-brand-red transition">Sito Tettorosso</a>
+        <a href="#contatti"
+           class="bg-brand-red hover:bg-brand-redDark text-white px-4 lg:px-5 py-2 rounded text-sm font-semibold transition">
+          Richiedi info
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================
+       6.2 — HERO
+       ============================================ -->
+  <section class="relative h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
+    <img src="/assets/img/hero-rendering.jpg"
+         alt="Rendering Residenza Lisieux, Albignasego"
+         class="absolute inset-0 w-full h-full object-cover"
+         loading="eager" fetchpriority="high">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent"></div>
+
+    <div class="relative z-10 h-full container mx-auto px-4 lg:px-8 flex flex-col justify-end pb-12 lg:pb-20">
+      <p class="text-white/90 text-sm lg:text-base font-medium uppercase tracking-wider mb-3">
+        Albignasego (PD) — Quartiere San Giacomo, Via Santa Teresa di Lisieux
+      </p>
+      <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-3xl leading-tight">
+        Residenza Lisieux
+      </h1>
+      <p class="text-white/95 text-lg lg:text-xl max-w-2xl mb-8 leading-relaxed">
+        10 unità di nuova costruzione in Classe A4.<br>
+        Ampi soggiorni open space e terrazze abitabili.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#contatti" class="bg-brand-red hover:bg-brand-redDark text-white px-6 py-3 rounded font-semibold transition shadow-lg">
+          Richiedi informazioni
+        </a>
+        <a href="#tipologie"
+           class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/40 text-white px-6 py-3 rounded font-semibold transition">
+          Vedi le tipologie
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.3 — VIDEO
+       ============================================ -->
+  <section class="bg-brand-gray py-16 lg:py-24">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
+      <h2 class="text-3xl lg:text-4xl font-bold mb-3 text-center">Scopri la Residenza Lisieux</h2>
+      <p class="text-lg text-gray-600 text-center mb-10">Vista aerea e dettagli del progetto</p>
+      <div class="aspect-video rounded-lg overflow-hidden shadow-lg">
+        <lite-youtube videoid="uy9gif1poeA" playlabel="Riproduci video Residenza Lisieux"></lite-youtube>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.4 — QUATTRO MOTIVI
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-brand-gray">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+      <div class="text-center mb-12 lg:mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Tre motivi per scegliere la Residenza Lisieux</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">Quello che rende questa nuova costruzione diversa dalle altre nella zona.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card 1 — Spazi vivibili -->
+        <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Spazi vivibili</h3>
+          <p class="text-gray-600">Ampio soggiorno open space e terrazza abitabile, fino a 32 mq ai piani superiori più logge dedicate. Spazio reale per pranzare, lavorare da casa, vivere all'aperto tutto l'anno.</p>
+        </div>
+        <!-- Card 2 — Classe A4 -->
+        <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96c1.4 9.3 .4 14.5-8.2 17.04Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Classe A4 con fotovoltaico</h3>
+          <p class="text-gray-600">Edificio a energia quasi zero. Pompa di calore Ariston, riscaldamento a pavimento, ventilazione meccanica controllata e fotovoltaico privato 3,26 kWp per ogni unità. Bollette ridotte al minimo dal primo giorno.</p>
+        </div>
+        <!-- Card 3 — Servizi -->
+        <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm hover:shadow-md transition">
+          <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-lg flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Servizi a piedi</h3>
+          <p class="text-gray-600">Supermercato, scuole, parco, campo sportivo, farmacia, attività di quartiere. Tutto raggiungibile a piedi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.5 — TIPOLOGIE
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+      <div class="text-center mb-12 lg:mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Tipologie disponibili</h2>
+        <p class="text-lg text-gray-600">10 unità distribuite su tre piani. Tre tipologie pensate per famiglie e coppie.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Card 1 — Quadrilocale piano terra giardino -->
+        <article class="border border-brand-border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6">
+            <span class="inline-block bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">2 unità disponibili</span>
+            <h3 class="text-xl font-bold leading-snug">Quadrilocale piano terra con giardino</h3>
+          </div>
+          <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Giardino esclusivo</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Ingresso indipendente</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Soggiorno open space</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Garage al piano terra</span></div>
+          </div>
+          <a href="#contatti" class="block bg-brand-darker hover:bg-black text-white text-center py-3 font-semibold transition">Richiedi info</a>
+        </article>
+
+        <!-- Card 2 — Trilocale -->
+        <article class="border border-brand-border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6">
+            <span class="inline-block bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">2 unità disponibili</span>
+            <h3 class="text-xl font-bold leading-snug">Trilocale primo o secondo piano</h3>
+          </div>
+          <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Soggiorno con angolo cottura</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Due camere</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Doppi servizi</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Garage al piano terra</span></div>
+          </div>
+          <a href="#contatti" class="block bg-brand-darker hover:bg-black text-white text-center py-3 font-semibold transition">Richiedi info</a>
+        </article>
+
+        <!-- Card 3 — Quadrilocale terrazza -->
+        <article class="border border-brand-border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6">
+            <span class="inline-block bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">6 unità disponibili</span>
+            <h3 class="text-xl font-bold leading-snug">Quadrilocale con terrazza abitabile</h3>
+          </div>
+          <div class="p-6 space-y-3 flex-1">
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Ampio soggiorno open space</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span><strong>Terrazza abitabile</strong></span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Tre camere</span></div>
+            <div class="flex items-start gap-3"><span class="text-brand-red font-bold mt-0.5">→</span><span>Garage al piano terra</span></div>
+          </div>
+          <a href="#contatti" class="block bg-brand-darker hover:bg-black text-white text-center py-3 font-semibold transition">Richiedi info</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.6 — LA PIANTA
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-brand-gray">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl" x-data="{ openImg: false }">
+      <div class="text-center mb-12 lg:mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">La pianta</h2>
+        <p class="text-lg text-gray-600">Pianta tipo trilocale piano primo. Le metrature e la distribuzione possono variare per tipologia e piano.</p>
+      </div>
+
+      <figure class="bg-white rounded-lg overflow-hidden shadow-sm cursor-zoom-in group max-w-4xl mx-auto"
+              @click="openImg = true">
+        <div class="overflow-hidden p-4 sm:p-8">
+          <img src="/assets/img/pianta-tipo-trilocale.jpg" alt="Pianta arredata trilocale primo piano Residenza Lisieux"
+               class="w-full h-auto group-hover:scale-105 transition duration-500" loading="lazy">
+        </div>
+        <figcaption class="p-4 text-center font-semibold border-t border-brand-border flex items-center justify-center gap-2">
+          <span>Trilocale piano primo — pianta arredata</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-red" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
+        </figcaption>
+      </figure>
+
+      <!-- Lightbox -->
+      <div x-show="openImg" x-cloak
+           @click="openImg = false" @keydown.escape.window="openImg = false"
+           class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+           x-transition.opacity>
+        <button @click.stop="openImg = false" class="absolute top-4 right-4 text-white text-3xl font-light hover:opacity-70 w-12 h-12 flex items-center justify-center" aria-label="Chiudi">✕</button>
+        <img src="/assets/img/pianta-tipo-trilocale.jpg" alt="Pianta arredata trilocale primo piano zoom" class="max-w-full max-h-full object-contain" @click.stop>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.7 — CAPITOLATO IN LINGUAGGIO ACQUIRENTE
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+      <div class="text-center mb-12 lg:mb-16">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Cosa c'è dentro le mura</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">I dettagli costruttivi e impiantistici della Residenza Lisieux, tradotti in linguaggio chiaro.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-12">
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Struttura e isolamento</h3>
+          <p class="text-gray-600">Strutture portanti in cemento armato, fondamenta a platea. Murature perimetrali in blocco cassero Pontarollo Cimablok da 35 cm con isolamento termoacustico in EPS che elimina i ponti termici. Rasatura esterna armata a doppia spalmatura e finitura "Venezia". Divisori interni in doppia lastra di cartongesso con lana minerale.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Riscaldamento e climatizzazione</h3>
+          <p class="text-gray-600">Pompa di calore Ariston, una per appartamento. Riscaldamento a pavimento per comfort uniforme. Climatizzazione estiva canalizzata nei controsoffitti. Acqua calda sanitaria con bollitore dedicato.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Aria sempre pulita</h3>
+          <p class="text-gray-600">Ventilazione meccanica controllata (VMC) per ricambio aria senza dispersione di calore. Mantiene umidità interna al 50-60% ed elimina aria viziata, polvere e umidità in eccesso.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Energia: Classe A4 e fotovoltaico</h3>
+          <p class="text-gray-600">Impianto fotovoltaico Soladria autonomo da 3,26 kWp per ogni unità — 7 moduli Longisolar 465 Wp con inverter ibrido. Scambio sul posto GSE. Classe energetica A4 — edificio a energia quasi zero. Eventuali kW aggiuntivi in opzione.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Domotica e impianto elettrico</h3>
+          <p class="text-gray-600">Sistema UNA con tecnologia Master per gestione da smartphone di luci, tapparelle, riscaldamento, scenari e produzione fotovoltaico. Predisposizione avanzata per impianto allarme.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Finiture interne</h3>
+          <p class="text-gray-600">Pavimenti in gres porcellanato Casalgrande Padana per zona giorno, cucina, bagni. Camere in parquet rovere prima scelta. Rivestimenti bagni fino a 120 cm (180 cm zona doccia).</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Serramenti e oscuramenti</h3>
+          <p class="text-gray-600">Finestre in PVC bianco telaio 76 mm, doppio vetrocamera basso emissivo con gas argon. Tapparelle motorizzate elettriche. Portoncino blindato classe 3 antieffrazione.</p>
+        </div>
+        <div class="border-l-4 border-brand-red pl-6 py-2">
+          <h3 class="text-lg font-bold mb-2">Parti comuni</h3>
+          <p class="text-gray-600">Vano scala in marmo. Ascensore gearless senza olio (massima silenziosità). Cancelli motorizzati. Illuminazione esterna a basso consumo. Recinzione modulare e siepe perimetrale.</p>
+        </div>
+      </div>
+
+      <!-- Box info tempi -->
+      <div class="bg-brand-gray rounded-lg p-6 lg:p-8 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+        <div>
+          <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Inizio cantiere</p>
+          <p class="text-xl font-bold">1 settembre 2026</p>
+        </div>
+        <div class="md:border-l md:border-r border-brand-border">
+          <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Consegna prevista</p>
+          <p class="text-xl font-bold">Marzo 2028</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Garanzia</p>
+          <p class="text-xl font-bold">Decennale postuma</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.8 — DOVE SI TROVA
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-white border-t border-brand-border">
+    <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Dove si trova</h2>
+        <p class="text-lg text-gray-600">Albignasego, località San Giacomo. Tutto a portata di passeggiata.</p>
+      </div>
+      <div class="rounded-lg overflow-hidden shadow-md">
+        <img src="/assets/img/mappa-zona.jpg" alt="Vista satellitare zona San Giacomo, Albignasego"
+             class="w-full h-auto" loading="lazy">
+      </div>
+      <div class="mt-6 text-center">
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+San+Giacomo+Albignasego+PD"
+           target="_blank" rel="noopener"
+           class="inline-flex items-center gap-2 text-brand-red hover:text-brand-redDark font-semibold transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Apri su Google Maps
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 lg:mt-12">
+        <div>
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-red" aria-hidden="true">
+              <circle cx="12" cy="5" r="2"/><path d="M5 22l3-10 4 3 3-3 5 10"/><path d="M9 12l1 4"/>
+            </svg>
+            A piedi
+          </h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Parco Giallo</strong> — 200 m</li>
+            <li><strong>Pizzeria Umby Pizza</strong> — 200 m</li>
+            <li><strong>Campo sportivo ASD San Giacomo</strong> — 350 m</li>
+            <li><strong>Supermercato A&amp;O</strong> — 400 m</li>
+            <li><strong>Trattoria Dalla Nena</strong> — 400 m</li>
+            <li><strong>Scuola Primaria Aldo Moro</strong> — 500 m</li>
+            <li><strong>Parrocchia di San Giacomo</strong> — 650 m</li>
+            <li>Ottica, ambulatorio veterinario, barberia, attività di quartiere — entro 350 m</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-red" aria-hidden="true">
+              <path d="M14 16H9m10 0h3v-3.15a1 1 0 0 0-.84-.99L16 11l-2.7-3.6a1 1 0 0 0-.8-.4H5.24a2 2 0 0 0-1.8 1.1l-.8 1.63A6 6 0 0 0 2 12.42V16h2"/><circle cx="6.5" cy="16.5" r="2.5"/><circle cx="16.5" cy="16.5" r="2.5"/>
+            </svg>
+            In auto
+          </h3>
+          <ul class="space-y-2 text-gray-700">
+            <li><strong>Tangenziale di Padova / SS16</strong> — 2 km</li>
+            <li><strong>Centro Padova</strong> — 5 km / 10 minuti</li>
+            <li><strong>Stazione FS Padova</strong> — 6 km</li>
+            <li><strong>Aeroporto Venezia Marco Polo</strong> — 55 km / 50 minuti</li>
+            <li><strong>Uscita A4 Padova Est</strong> — 8 km</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.9 — CLASSE ENERGETICA A4
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-brand-gray">
+    <div class="container mx-auto px-4 lg:px-8 max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Classe energetica A4</h2>
+        <p class="text-lg text-gray-600">Edificio a energia quasi zero. Bollette ridotte al minimo dal primo giorno.</p>
+      </div>
+
+      <div class="bg-white rounded-lg p-6 sm:p-8 lg:p-12 shadow-sm grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Scala energetica APE -->
+        <div class="space-y-1" role="img" aria-label="Scala classe energetica: A4 evidenziata">
+          <div class="bg-[#0E7C42] text-white font-bold px-4 py-3 rounded-r-lg ring-2 ring-[#0E7C42] ring-offset-2 flex items-center shadow-md energy-row" style="width: 100%">
+            <span class="bg-white text-[#0E7C42] font-bold px-3 py-1 rounded mr-3 text-sm">A4</span>
+            <span class="text-sm">← La tua casa</span>
+          </div>
+          <div class="bg-[#1E9E51] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 90%">A3</div>
+          <div class="bg-[#7EC04E] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 80%">A2</div>
+          <div class="bg-[#C8D930] text-brand-darker font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 70%">A1</div>
+          <div class="bg-[#FFD400] text-brand-darker font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 60%">B</div>
+          <div class="bg-[#F5A623] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 50%">C</div>
+          <div class="bg-[#E36F1E] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 40%">D</div>
+          <div class="bg-[#D9412B] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 35%">E</div>
+          <div class="bg-[#C8102E] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 30%">F</div>
+          <div class="bg-[#8B0000] text-white font-medium px-4 py-2 rounded-r-lg energy-row" style="width: 25%">G</div>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <p class="text-sm text-gray-500 uppercase tracking-wider mb-1">Prestazione energetica</p>
+            <p class="text-4xl font-bold text-[#0E7C42]">A4</p>
+            <p class="text-sm text-gray-600 mt-1">La massima classe in Italia</p>
+          </div>
+          <div class="border-t border-brand-border pt-4 space-y-2 text-gray-700">
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Pompa di calore aria-acqua</span></p>
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Riscaldamento a pavimento</span></p>
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Ventilazione meccanica controllata</span></p>
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Fotovoltaico privato 3,26 kWp</span></p>
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Murature in blocco cassero + EPS</span></p>
+            <p class="flex items-start gap-2"><span class="text-[#0E7C42] font-bold">✓</span><span>Serramenti PVC con doppio vetro basso emissivo</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.10 — FAQ
+       ============================================ -->
+  <section class="py-16 lg:py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8 max-w-3xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Domande frequenti</h2>
+        <p class="text-lg text-gray-600">Le risposte ai dubbi più comuni di chi acquista una casa in costruzione.</p>
+      </div>
+
+      <div class="space-y-3" x-data="{ open: null }">
+        <!-- Q1 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 1 ? null : 1"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 1">
+            <span class="font-semibold pr-4">Quando è prevista la consegna?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 1 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 1" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Il cantiere parte il 1° settembre 2026 e ha durata prevista di 18 mesi. La consegna è dunque prevista per marzo 2028, salvo imprevisti che vengono comunicati tempestivamente all'acquirente.</p>
+          </div>
+        </div>
+        <!-- Q2 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 2 ? null : 2"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 2">
+            <span class="font-semibold pr-4">Posso modificare il capitolato?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 2 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 2" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Sì. Il capitolato che vedi è quello "tipo" della COEB Costruzioni. Sono possibili varianti su finiture, impianto elettrico, sanitari e domotica, da concordare prima dell'inizio dei lavori per la tua unità. Eventuali differenze di costo sono trasparenti e regolate prima del rogito.</p>
+          </div>
+        </div>
+        <!-- Q3 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 3 ? null : 3"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 3">
+            <span class="font-semibold pr-4">È prevista garanzia?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 3 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 3" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Sì. Tutti gli impianti principali (riscaldamento, fotovoltaico, idraulico) sono coperti da polizza decennale postuma attivata dal giorno del collaudo. Le strutture sono coperte dalla garanzia decennale di legge.</p>
+          </div>
+        </div>
+        <!-- Q4 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 4 ? null : 4"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 4">
+            <span class="font-semibold pr-4">Posso modificare le planimetrie interne?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 4 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 4" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Sì, entro certi limiti. È possibile spostare divisori interni, modificare la posizione di porte e prese, intervenire sulle finiture. Ogni modifica va concordata con la Direzione Lavori prima dell'inizio delle opere relative al tuo appartamento.</p>
+          </div>
+        </div>
+        <!-- Q5 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 5 ? null : 5"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 5">
+            <span class="font-semibold pr-4">Cosa significa Classe A4?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 5 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 5" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">A4 è la massima classe energetica in Italia. Significa che l'edificio consuma pochissimo per riscaldamento e raffrescamento. Combinata con il fotovoltaico, l'unità diventa "a energia quasi zero": le bollette si riducono drasticamente rispetto a un'abitazione tradizionale.</p>
+          </div>
+        </div>
+        <!-- Q6 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 6 ? null : 6"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 6">
+            <span class="font-semibold pr-4">Sono inclusi parquet, bagni e porte interne?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 6 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 6" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Sì. Il capitolato include pavimenti in gres porcellanato per zona giorno e bagni, parquet rovere prima scelta in camera, bagni completi di sanitari Art Ceram e rubinetterie Ideal Standard, porte interne tamburate, portoncino blindato classe 3.</p>
+          </div>
+        </div>
+        <!-- Q7 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 7 ? null : 7"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 7">
+            <span class="font-semibold pr-4">Posso visitare il cantiere?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 7 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 7" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Una volta partiti i lavori, sarà possibile visitare il cantiere su appuntamento e con dotazione di sicurezza. Nel frattempo, il rendering e le planimetrie ti danno un'idea precisa del progetto.</p>
+          </div>
+        </div>
+        <!-- Q8 -->
+        <div class="border border-brand-border rounded-lg overflow-hidden">
+          <button @click="open = open === 8 ? null : 8"
+                  class="w-full text-left px-5 py-4 flex items-center justify-between hover:bg-brand-gray transition"
+                  :aria-expanded="open === 8">
+            <span class="font-semibold pr-4">Come funziona la prenotazione?</span>
+            <span class="text-brand-red text-2xl flex-shrink-0 leading-none" x-text="open === 8 ? '−' : '+'"></span>
+          </button>
+          <div x-show="open === 8" x-collapse>
+            <p class="px-5 py-4 text-gray-700 border-t border-brand-border">Si parte con una proposta di acquisto, che formalizza l'interesse e blocca l'unità scelta. Una volta accettata dal costruttore, si procede con il compromesso (preliminare di vendita) e il versamento delle caparre nei tempi concordati. Il rogito definitivo avviene a fine lavori dopo il collaudo. È un percorso standard di acquisto in costruzione.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.11 — CONTATTI
+       ============================================ -->
+  <section id="contatti" class="py-16 lg:py-24 bg-brand-gray">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl lg:text-4xl font-bold mb-3">Vuoi maggiori informazioni?</h2>
+        <p class="text-lg text-gray-600">Compila il form, chiamaci o scrivici su WhatsApp.<br>Ti rispondiamo entro la giornata lavorativa.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+
+        <!-- Form template visivo, non collegato a backend -->
+        <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm">
+          <form onsubmit="event.preventDefault(); alert('Per richieste, contattaci via telefono o WhatsApp ai recapiti a fianco.'); return false;" novalidate>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+              <div>
+                <label for="f-nome" class="block text-sm font-medium mb-1">Nome*</label>
+                <input id="f-nome" type="text" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+              </div>
+              <div>
+                <label for="f-cognome" class="block text-sm font-medium mb-1">Cognome*</label>
+                <input id="f-cognome" type="text" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+              </div>
+            </div>
+            <div class="mb-4">
+              <label for="f-email" class="block text-sm font-medium mb-1">Email*</label>
+              <input id="f-email" type="email" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+            </div>
+            <div class="mb-4">
+              <label for="f-tel" class="block text-sm font-medium mb-1">Telefono</label>
+              <input id="f-tel" type="tel" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+            </div>
+            <div class="mb-4">
+              <label for="f-tipo" class="block text-sm font-medium mb-1">Tipologia di interesse</label>
+              <select id="f-tipo" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red bg-white transition">
+                <option value="">Seleziona...</option>
+                <option>Quadrilocale piano terra con giardino</option>
+                <option>Trilocale primo o secondo piano</option>
+                <option>Quadrilocale con terrazza abitabile</option>
+                <option>Non so, vorrei consigli</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label for="f-msg" class="block text-sm font-medium mb-1">Messaggio</label>
+              <textarea id="f-msg" rows="4" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition"></textarea>
+            </div>
+            <div class="mb-5 flex items-start gap-2">
+              <input type="checkbox" id="privacy" class="mt-1 accent-brand-red">
+              <label for="privacy" class="text-xs text-gray-600 leading-relaxed">
+                Autorizzo al trattamento dei miei dati ai sensi della <a href="https://www.tettorossoimmobiliare.it/privacy-policy/" target="_blank" rel="noopener" class="text-brand-red underline hover:text-brand-redDark">informativa sulla Privacy</a> (art. 13 Reg. 679/2016 GDPR)*
+              </label>
+            </div>
+            <button type="submit"
+                    class="w-full bg-brand-red hover:bg-brand-redDark text-white py-3 rounded font-semibold transition">
+              Invia richiesta
+            </button>
+          </form>
+        </div>
+
+        <!-- Box contatti agenzia -->
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm">
+            <p class="text-sm text-gray-500 uppercase tracking-wider mb-2">Immobile gestito da</p>
+            <h3 class="text-2xl font-bold mb-4 leading-tight">Tettorosso Immobiliare<br>Agenzia Voltabarozzo</h3>
+
+            <div class="space-y-4 text-gray-700">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-brand-red" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>Via Piovese, 276 — 35127 Padova</span>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-brand-red" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <a href="tel:+390496367877" class="hover:text-brand-red font-semibold transition">049 636 7877</a>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="flex-shrink-0 mt-0.5 text-brand-red" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <a href="mailto:voltabarozzo@tettorossoimmobiliare.it" class="hover:text-brand-red break-all transition">voltabarozzo@tettorossoimmobiliare.it</a>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-6 border-t border-brand-border">
+              <p class="text-sm text-gray-500 uppercase tracking-wider mb-2">Orari</p>
+              <p class="text-sm text-gray-700 leading-relaxed">Lun-Ven: 9:00-12:30 / 15:00-19:30<br>Sab: 9:00-12:30</p>
+            </div>
+          </div>
+
+          <!-- WhatsApp CTA -->
+          <a href="https://wa.me/393930003738?text=Salve%2C%20vorrei%20informazioni%20sulla%20Residenza%20Lisieux%20ad%20Albignasego."
+             target="_blank" rel="noopener"
+             class="flex items-center justify-center gap-3 bg-[#25D366] hover:bg-[#20BA5A] text-white py-4 rounded-lg font-semibold transition shadow-md">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Scrivici su WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6.12 — FOOTER (replica sito Tettorosso)
+       ============================================ -->
+  <footer class="bg-[#D32D1F] text-white pt-16 lg:pt-24 pb-8 lg:pb-12 relative">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
+
+      <!-- Lista agenzie -->
+      <div style="border-top: 1px solid rgba(255,255,255,0.3);">
+
+        <!-- Arcella -->
+        <div class="agency-row">
+          <a href="https://www.tettorossoimmobiliare.it/agenzie/arcella/" target="_blank" rel="noopener" class="agency-row__overlay">Scopri l'agenzia dell'Arcella</a>
+          <h2 class="agency-title">Arcella</h2>
+          <div class="agency-desc">
+            Indirizzo: Via M. Buonarroti, 107 - 35135 Padova<br>
+            Contatti: <a href="tel:+390498644826">049 864 4826</a> - <a href="mailto:padova@tettorossoimmobiliare.it">padova@tettorossoimmobiliare.it</a><br>
+            Michelangelo Srl - P. IVA: 03949220283
+          </div>
+          <span class="agency-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+
+        <!-- Voltabarozzo -->
+        <div class="agency-row">
+          <a href="https://www.tettorossoimmobiliare.it/agenzie/voltabarozzo/" target="_blank" rel="noopener" class="agency-row__overlay">Scopri l'agenzia di Voltabarozzo</a>
+          <h2 class="agency-title">Voltabarozzo</h2>
+          <div class="agency-desc">
+            Indirizzo: Via Piovese, 276 - 35127, Padova<br>
+            Contatti: <a href="tel:+390496367877">049 636 7877</a> - <a href="mailto:voltabarozzo@tettorossoimmobiliare.it">voltabarozzo@tettorossoimmobiliare.it</a><br>
+            Voltabarozzo Srl - P. IVA: 05657770284
+          </div>
+          <span class="agency-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+
+        <!-- Limena -->
+        <div class="agency-row">
+          <a href="https://www.tettorossoimmobiliare.it/agenzie/limena/" target="_blank" rel="noopener" class="agency-row__overlay">Scopri l'agenzia di Limena</a>
+          <h2 class="agency-title">Limena</h2>
+          <div class="agency-desc">
+            Indirizzo: Via Roma, 05 - 35010 Limena, Padova<br>
+            Contatti: <a href="tel:+39049767720">049 767 720</a> - <a href="mailto:limena@tettorossoimmobiliare.it">limena@tettorossoimmobiliare.it</a><br>
+            Studio Limena Srl - P. IVA: 05693010281
+          </div>
+          <span class="agency-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+
+        <!-- Cadoneghe -->
+        <div class="agency-row">
+          <a href="https://www.tettorossoimmobiliare.it/agenzie/cadoneghe/" target="_blank" rel="noopener" class="agency-row__overlay">Scopri l'agenzia di Cadoneghe</a>
+          <h2 class="agency-title">Cadoneghe</h2>
+          <div class="agency-desc">
+            Indirizzo: Via A. Gramsci, 10 - 35010 Cadoneghe, Padova<br>
+            Contatti: <a href="tel:+390497302270">049 730 2270</a> - <a href="mailto:cadoneghe@tettorossoimmobiliare.it">cadoneghe@tettorossoimmobiliare.it</a><br>
+            Ca Dominicus Srl - P. IVA: 05376040282
+          </div>
+          <span class="agency-arrow" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </span>
+        </div>
+
+      </div>
+
+      <!-- Footer end: social + copyright + logo -->
+      <div class="footer-end">
+
+        <!-- Logo Tettorosso footer (md: posizionato in alto a destra) -->
+        <img src="/assets/img/logo-tettorosso-footer.svg" alt="Tetto Rosso Immobiliare"
+             class="footer-logo" style="width: 130px; height: auto;">
+
+        <!-- Social (md: posizionato a sinistra) -->
+        <ul class="footer-social" style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.875rem;">
+          <li>
+            <a href="https://www.facebook.com/tettorossoimmobiliarepadova/" target="_blank" rel="noopener" aria-label="Facebook" style="color: white; opacity: 1; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:block"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </li>
+          <li style="opacity: 0.5;">|</li>
+          <li>
+            <a href="https://www.instagram.com/tetto_rosso_immobiliare" target="_blank" rel="noopener" aria-label="Instagram" style="color: white; opacity: 1; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:block"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            </a>
+          </li>
+          <li style="opacity: 0.5;">|</li>
+          <li>
+            <a href="https://www.youtube.com/@tettorosso_immobiliare" target="_blank" rel="noopener" aria-label="YouTube" style="color: white; opacity: 1; transition: opacity 0.2s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" style="display:block"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </li>
+        </ul>
+
+        <!-- Copyright + privacy/cookie centrato -->
+        <div style="font-size: 0.875rem; text-align: center; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 0.25rem 0.5rem;">
+          <p style="margin: 0;">© 2026 Tetto rosso Immobiliare Tutti i diritti riservati</p>
+          <ul style="display: flex; align-items: center; gap: 0.5rem;">
+            <li>|</li>
+            <li><a href="https://www.tettorossoimmobiliare.it/privacy-policy/" target="_blank" rel="noopener" style="color: white; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Privacy Policy</a></li>
+            <li>|</li>
+            <li><a href="https://www.tettorossoimmobiliare.it/cookie-policy/" target="_blank" rel="noopener" style="color: white; text-decoration: none;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Cookie Policy</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
