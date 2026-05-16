@@ -74,7 +74,7 @@ cd lisieux-lp
 wrangler pages deploy . --project-name=lisieux
 ```
 
-URL produzione: `https://lisieux.pages.dev`
+URL produzione: `https://tettorossonuovecostruzioni.it` (preview Pages: `https://lisieux.pages.dev`)
 
 ### Opzione B — Via GitHub + Cloudflare Dashboard
 
