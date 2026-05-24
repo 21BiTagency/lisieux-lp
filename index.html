@@ -203,32 +203,71 @@
   <!-- ============================================
        6.2 — HERO
        ============================================ -->
-  <section class="relative h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
-    <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
-         alt="Rendering Residenza Lisieux, Albignasego"
-         class="absolute inset-0 w-full h-full object-cover"
-         loading="eager" fetchpriority="high">
-    <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent"></div>
+  <section class="relative bg-neutral-900">
+    <!-- MOBILE/TABLET: immagine intera (object-contain) su sfondo blurato + testo sotto -->
+    <div class="lg:hidden">
+      <div class="relative aspect-[16/9] overflow-hidden bg-neutral-900">
+        <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
+             alt=""
+             aria-hidden="true"
+             class="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70"
+             loading="eager">
+        <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
+             alt="Rendering Residenza Lisieux, Albignasego"
+             class="relative w-full h-full object-contain"
+             loading="eager" fetchpriority="high">
+      </div>
+      <div class="container mx-auto px-4 py-8">
+        <p class="text-white/80 text-xs font-medium uppercase tracking-wider mb-3">
+          Albignasego (PD) — Quartiere San Giacomo, Via Santa Teresa di Lisieux
+        </p>
+        <h1 class="text-white text-4xl md:text-5xl font-bold mb-4 leading-tight">
+          Residenza Lisieux
+        </h1>
+        <p class="text-white/90 text-lg mb-6 leading-relaxed">
+          10 unità di nuova costruzione in Classe A4.<br>
+          Ampi soggiorni open space e terrazze abitabili.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#contatti" class="bg-brand-red hover:bg-brand-redDark text-white px-6 py-3 rounded font-semibold transition shadow-lg">
+            Richiedi informazioni
+          </a>
+          <a href="#tipologie"
+             class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/40 text-white px-6 py-3 rounded font-semibold transition">
+            Vedi le tipologie
+          </a>
+        </div>
+      </div>
+    </div>
 
-    <div class="relative z-10 h-full container mx-auto px-4 lg:px-8 flex flex-col justify-end pb-12 lg:pb-20">
-      <p class="text-white/90 text-sm lg:text-base font-medium uppercase tracking-wider mb-3">
-        Albignasego (PD) — Quartiere San Giacomo, Via Santa Teresa di Lisieux
-      </p>
-      <h1 class="text-white text-4xl md:text-5xl lg:text-6xl font-bold mb-4 max-w-3xl leading-tight">
-        Residenza Lisieux
-      </h1>
-      <p class="text-white/95 text-lg lg:text-xl max-w-2xl mb-8 leading-relaxed">
-        10 unità di nuova costruzione in Classe A4.<br>
-        Ampi soggiorni open space e terrazze abitabili.
-      </p>
-      <div class="flex flex-wrap gap-3">
-        <a href="#contatti" class="bg-brand-red hover:bg-brand-redDark text-white px-6 py-3 rounded font-semibold transition shadow-lg">
-          Richiedi informazioni
-        </a>
-        <a href="#tipologie"
-           class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/40 text-white px-6 py-3 rounded font-semibold transition">
-          Vedi le tipologie
-        </a>
+    <!-- DESKTOP: hero classica con overlay -->
+    <div class="hidden lg:block relative h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
+      <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
+           alt="Rendering Residenza Lisieux, Albignasego"
+           class="absolute inset-0 w-full h-full object-cover"
+           loading="eager" fetchpriority="high">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent"></div>
+
+      <div class="relative z-10 h-full container mx-auto px-8 flex flex-col justify-end pb-20">
+        <p class="text-white/90 text-base font-medium uppercase tracking-wider mb-3">
+          Albignasego (PD) — Quartiere San Giacomo, Via Santa Teresa di Lisieux
+        </p>
+        <h1 class="text-white text-6xl font-bold mb-4 max-w-3xl leading-tight">
+          Residenza Lisieux
+        </h1>
+        <p class="text-white/95 text-xl max-w-2xl mb-8 leading-relaxed">
+          10 unità di nuova costruzione in Classe A4.<br>
+          Ampi soggiorni open space e terrazze abitabili.
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#contatti" class="bg-brand-red hover:bg-brand-redDark text-white px-6 py-3 rounded font-semibold transition shadow-lg">
+            Richiedi informazioni
+          </a>
+          <a href="#tipologie"
+             class="bg-white/10 hover:bg-white/20 backdrop-blur border border-white/40 text-white px-6 py-3 rounded font-semibold transition">
+            Vedi le tipologie
+          </a>
+        </div>
       </div>
     </div>
   </section>
