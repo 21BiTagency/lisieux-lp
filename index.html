@@ -178,6 +178,24 @@
       }
     }
   </style>
+
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '470906951275214');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=470906951275214&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body class="font-sans text-brand-dark bg-white antialiased">
 
@@ -714,30 +732,30 @@
 
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
 
-        <!-- Form template visivo, non collegato a backend -->
+        <!-- Form contatti -->
         <div class="bg-white rounded-lg p-6 lg:p-8 shadow-sm">
-          <form onsubmit="event.preventDefault(); alert('Per richieste, contattaci via telefono o WhatsApp ai recapiti a fianco.'); return false;" novalidate>
+          <form id="form-contatti" novalidate>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div>
                 <label for="f-nome" class="block text-sm font-medium mb-1">Nome*</label>
-                <input id="f-nome" type="text" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+                <input id="f-nome" name="nome" type="text" required class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
               </div>
               <div>
                 <label for="f-cognome" class="block text-sm font-medium mb-1">Cognome*</label>
-                <input id="f-cognome" type="text" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+                <input id="f-cognome" name="cognome" type="text" required class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
               </div>
             </div>
             <div class="mb-4">
               <label for="f-email" class="block text-sm font-medium mb-1">Email*</label>
-              <input id="f-email" type="email" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+              <input id="f-email" name="email" type="email" required class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
             </div>
             <div class="mb-4">
               <label for="f-tel" class="block text-sm font-medium mb-1">Telefono</label>
-              <input id="f-tel" type="tel" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
+              <input id="f-tel" name="telefono" type="tel" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition">
             </div>
             <div class="mb-4">
               <label for="f-tipo" class="block text-sm font-medium mb-1">Tipologia di interesse</label>
-              <select id="f-tipo" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red bg-white transition">
+              <select id="f-tipo" name="tipologia" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red bg-white transition">
                 <option value="">Seleziona...</option>
                 <option>Quadrilocale piano terra con giardino</option>
                 <option>Trilocale primo o secondo piano</option>
@@ -747,19 +765,82 @@
             </div>
             <div class="mb-4">
               <label for="f-msg" class="block text-sm font-medium mb-1">Messaggio</label>
-              <textarea id="f-msg" rows="4" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition"></textarea>
+              <textarea id="f-msg" name="messaggio" rows="4" class="w-full border border-brand-border rounded px-3 py-2 focus:outline-none focus:border-brand-red focus:ring-1 focus:ring-brand-red transition"></textarea>
             </div>
             <div class="mb-5 flex items-start gap-2">
-              <input type="checkbox" id="privacy" class="mt-1 accent-brand-red">
+              <input type="checkbox" id="privacy" name="privacy" required class="mt-1 accent-brand-red">
               <label for="privacy" class="text-xs text-gray-600 leading-relaxed">
                 Autorizzo al trattamento dei miei dati ai sensi della <a href="https://www.tettorossoimmobiliare.it/privacy-policy/" target="_blank" rel="noopener" class="text-brand-red underline hover:text-brand-redDark">informativa sulla Privacy</a> (art. 13 Reg. 679/2016 GDPR)*
               </label>
             </div>
-            <button type="submit"
-                    class="w-full bg-brand-red hover:bg-brand-redDark text-white py-3 rounded font-semibold transition">
+            <button type="submit" id="form-submit"
+                    class="w-full bg-brand-red hover:bg-brand-redDark text-white py-3 rounded font-semibold transition disabled:opacity-60 disabled:cursor-not-allowed">
               Invia richiesta
             </button>
+            <p id="form-error" class="hidden mt-3 text-sm text-brand-red text-center"></p>
           </form>
+
+          <!-- Box success post-invio -->
+          <div id="form-success" class="hidden text-center py-8">
+            <div class="mx-auto mb-4 w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <h3 class="text-xl font-bold mb-2">La tua richiesta è stata inviata</h3>
+            <p class="text-gray-600">Grazie! Ti ricontatteremo entro la giornata lavorativa.<br>Per richieste urgenti puoi chiamarci o scriverci su WhatsApp.</p>
+          </div>
+
+          <script>
+            (function() {
+              var form = document.getElementById('form-contatti');
+              var btn = document.getElementById('form-submit');
+              var errEl = document.getElementById('form-error');
+              var successEl = document.getElementById('form-success');
+
+              form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                errEl.classList.add('hidden');
+
+                if (!form.checkValidity()) {
+                  errEl.textContent = 'Compila i campi obbligatori e accetta la Privacy.';
+                  errEl.classList.remove('hidden');
+                  return;
+                }
+
+                var originalText = btn.textContent;
+                btn.textContent = 'Invio in corso...';
+                btn.disabled = true;
+
+                var data = {
+                  nome: form.nome.value.trim(),
+                  cognome: form.cognome.value.trim(),
+                  email: form.email.value.trim(),
+                  telefono: form.telefono.value.trim(),
+                  tipologia: form.tipologia.value,
+                  messaggio: form.messaggio.value.trim()
+                };
+
+                try {
+                  var response = await fetch('https://ventunobitpuntoagency.app.n8n.cloud/webhook/tr-lisieux-contatti', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                  });
+                  if (!response.ok) throw new Error('HTTP ' + response.status);
+
+                  if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+
+                  form.style.display = 'none';
+                  successEl.classList.remove('hidden');
+                  successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } catch (err) {
+                  btn.textContent = originalText;
+                  btn.disabled = false;
+                  errEl.textContent = 'Si è verificato un errore. Riprova o contattaci via telefono / WhatsApp.';
+                  errEl.classList.remove('hidden');
+                }
+              });
+            })();
+          </script>
         </div>
 
         <!-- Box contatti agenzia -->
