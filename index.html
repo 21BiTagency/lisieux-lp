@@ -500,37 +500,170 @@
   </section>
 
   <!-- ============================================
-       6.6 — LA PIANTA
+       6.6 — LE PIANTE TIPO
        ============================================ -->
-  <section class="py-16 lg:py-24 bg-brand-gray">
-    <div class="container mx-auto px-4 lg:px-8 max-w-5xl" x-data="{ openImg: false }">
+  <section id="piante" class="py-16 lg:py-24 bg-brand-gray scroll-mt-20" aria-labelledby="piante-title">
+    <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
       <div class="text-center mb-12 lg:mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold mb-3">La pianta</h2>
-        <p class="text-lg text-gray-600">Pianta tipo quadrilocale piano primo. Le metrature e la distribuzione possono variare per tipologia e piano.</p>
+        <h2 id="piante-title" class="text-3xl lg:text-4xl font-bold mb-3">Le piante tipo</h2>
+        <p class="text-lg text-gray-600">Esplora gli spazi delle tre tipologie. Seleziona una pianta per ingrandirla.</p>
       </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="plan-card border border-brand-border rounded-lg overflow-hidden bg-white hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6 md:min-h-[9.5rem]">
+            <p class="text-brand-red text-xs font-semibold uppercase tracking-wider mb-3">Pianta tipo</p>
+            <h3 class="text-xl font-bold leading-snug">Quadrilocale piano terra con giardino</h3>
+          </div>
+          <button type="button" class="plan-open group flex flex-col flex-1 w-full text-left"
+                  data-plan-index="0" data-plan-title="Quadrilocale piano terra con giardino"
+                  data-plan-src="/assets/img/pianta-giardino-pulita-20260915.webp"
+                  data-plan-alt="Pianta arredata degli interni del quadrilocale al piano terra, con tre camere e due bagni" aria-label="Ingrandisci la pianta: Quadrilocale piano terra con giardino"
+                  aria-haspopup="dialog" aria-controls="plan-dialog">
+            <span class="block aspect-square w-full overflow-hidden bg-white p-4">
+              <img src="/assets/img/pianta-giardino-pulita-20260915.webp"
+                   srcset="/assets/img/pianta-giardino-pulita-20260915-640.webp 640w, /assets/img/pianta-giardino-pulita-20260915-960.webp 960w, /assets/img/pianta-giardino-pulita-20260915.webp 1400w"
+                   sizes="(min-width: 1152px) 331px, (min-width: 768px) calc((100vw - 144px) / 3), calc(100vw - 66px)"
+                   alt="Pianta arredata degli interni del quadrilocale al piano terra, con tre camere e due bagni" width="1400" height="1400" loading="lazy" decoding="async"
+                   class="w-full h-full object-contain transition duration-300 group-hover:scale-[1.025] motion-reduce:transform-none">
+            </span>
+            <span class="block p-6 pt-2 text-gray-600 leading-relaxed flex-1">Zona giorno open space, tre camere e doppi servizi. Il giardino esclusivo non è rappresentato in questa pianta.</span>
+            <span class="flex items-center justify-center gap-2 w-full bg-brand-darker group-hover:bg-black text-white py-3 px-4 font-semibold transition">
+              Ingrandisci la pianta
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 7.5v6m-3-3h6"/></svg>
+            </span>
+          </button>
+        </article>
 
-      <figure class="bg-white rounded-lg overflow-hidden shadow-sm cursor-zoom-in group max-w-4xl mx-auto"
-              @click="openImg = true">
-        <div class="overflow-hidden p-4 sm:p-8">
-          <img src="/assets/img/pianta-tipo-trilocale.jpg" alt="Pianta arredata quadrilocale primo piano Residenza Lisieux"
-               class="w-full h-auto group-hover:scale-105 transition duration-500" loading="lazy">
-        </div>
-        <figcaption class="p-4 text-center font-semibold border-t border-brand-border flex items-center justify-center gap-2">
-          <span>Quadrilocale piano primo — pianta arredata</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-red" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6"/><path d="M8 11h6"/></svg>
-        </figcaption>
-      </figure>
+        <article class="plan-card border border-brand-border rounded-lg overflow-hidden bg-white hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6 md:min-h-[9.5rem]">
+            <p class="text-brand-red text-xs font-semibold uppercase tracking-wider mb-3">Pianta tipo</p>
+            <h3 class="text-xl font-bold leading-snug">Trilocale primo o secondo piano</h3>
+          </div>
+          <button type="button" class="plan-open group flex flex-col flex-1 w-full text-left"
+                  data-plan-index="1" data-plan-title="Trilocale primo o secondo piano"
+                  data-plan-src="/assets/img/pianta-trilocale-pulita-20260915.webp"
+                  data-plan-alt="Pianta arredata del trilocale con due camere, due bagni e terrazza" aria-label="Ingrandisci la pianta: Trilocale primo o secondo piano"
+                  aria-haspopup="dialog" aria-controls="plan-dialog">
+            <span class="block aspect-square w-full overflow-hidden bg-white p-4">
+              <img src="/assets/img/pianta-trilocale-pulita-20260915.webp"
+                   srcset="/assets/img/pianta-trilocale-pulita-20260915-640.webp 640w, /assets/img/pianta-trilocale-pulita-20260915-960.webp 960w, /assets/img/pianta-trilocale-pulita-20260915.webp 1400w"
+                   sizes="(min-width: 1152px) 331px, (min-width: 768px) calc((100vw - 144px) / 3), calc(100vw - 66px)"
+                   alt="Pianta arredata del trilocale con due camere, due bagni e terrazza" width="1400" height="1400" loading="lazy" decoding="async"
+                   class="w-full h-full object-contain transition duration-300 group-hover:scale-[1.025] motion-reduce:transform-none">
+            </span>
+            <span class="block p-6 pt-2 text-gray-600 leading-relaxed flex-1">Soggiorno con angolo cottura, due camere, doppi servizi e terrazza. Esempio di distribuzione al primo piano.</span>
+            <span class="flex items-center justify-center gap-2 w-full bg-brand-darker group-hover:bg-black text-white py-3 px-4 font-semibold transition">
+              Ingrandisci la pianta
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 7.5v6m-3-3h6"/></svg>
+            </span>
+          </button>
+        </article>
 
-      <!-- Lightbox -->
-      <div x-show="openImg" x-cloak
-           @click="openImg = false" @keydown.escape.window="openImg = false"
-           class="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
-           x-transition.opacity>
-        <button @click.stop="openImg = false" class="absolute top-4 right-4 text-white text-3xl font-light hover:opacity-70 w-12 h-12 flex items-center justify-center" aria-label="Chiudi">✕</button>
-        <img src="/assets/img/pianta-tipo-trilocale.jpg" alt="Pianta arredata quadrilocale primo piano zoom" class="max-w-full max-h-full object-contain" @click.stop>
+        <article class="plan-card border border-brand-border rounded-lg overflow-hidden bg-white hover:shadow-lg transition flex flex-col">
+          <div class="bg-brand-gray p-6 md:min-h-[9.5rem]">
+            <p class="text-brand-red text-xs font-semibold uppercase tracking-wider mb-3">Pianta tipo</p>
+            <h3 class="text-xl font-bold leading-snug">Quadrilocale con terrazza abitabile</h3>
+          </div>
+          <button type="button" class="plan-open group flex flex-col flex-1 w-full text-left"
+                  data-plan-index="2" data-plan-title="Quadrilocale con terrazza abitabile"
+                  data-plan-src="/assets/img/pianta-terrazza-pulita-20260915.webp"
+                  data-plan-alt="Pianta arredata del quadrilocale con tre camere, due bagni, terrazza e loggia" aria-label="Ingrandisci la pianta: Quadrilocale con terrazza abitabile"
+                  aria-haspopup="dialog" aria-controls="plan-dialog">
+            <span class="block aspect-square w-full overflow-hidden bg-white p-4">
+              <img src="/assets/img/pianta-terrazza-pulita-20260915.webp"
+                   srcset="/assets/img/pianta-terrazza-pulita-20260915-640.webp 640w, /assets/img/pianta-terrazza-pulita-20260915-960.webp 960w, /assets/img/pianta-terrazza-pulita-20260915.webp 1400w"
+                   sizes="(min-width: 1152px) 331px, (min-width: 768px) calc((100vw - 144px) / 3), calc(100vw - 66px)"
+                   alt="Pianta arredata del quadrilocale con tre camere, due bagni, terrazza e loggia" width="1400" height="1400" loading="lazy" decoding="async"
+                   class="w-full h-full object-contain transition duration-300 group-hover:scale-[1.025] motion-reduce:transform-none">
+            </span>
+            <span class="block p-6 pt-2 text-gray-600 leading-relaxed flex-1">Zona giorno open space, tre camere, doppi servizi, terrazza e loggia. Esempio di distribuzione al primo piano.</span>
+            <span class="flex items-center justify-center gap-2 w-full bg-brand-darker group-hover:bg-black text-white py-3 px-4 font-semibold transition">
+              Ingrandisci la pianta
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5M10.5 7.5v6m-3-3h6"/></svg>
+            </span>
+          </button>
+        </article>
       </div>
+      <p class="text-sm text-gray-500 leading-relaxed text-center mt-8 max-w-3xl mx-auto">Le piante arredate sono rappresentative delle tipologie. Metrature, distribuzione e spazi esterni possono variare in base all’unità e al piano.</p>
     </div>
   </section>
+
+  <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-dialog-title">
+    <div class="plan-dialog-toolbar">
+      <div>
+        <p class="text-brand-red text-xs font-semibold uppercase tracking-wider mb-1">Pianta tipo</p>
+        <h2 id="plan-dialog-title" class="font-bold leading-snug"></h2>
+      </div>
+      <button type="button" class="plan-dialog-close" aria-label="Chiudi la pianta" autofocus>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="plan-dialog-image"><img id="plan-dialog-image" alt="" width="1400" height="1400"></div>
+    <div class="plan-dialog-nav">
+      <button type="button" data-plan-prev aria-label="Pianta precedente">← <span>Precedente</span></button>
+      <span id="plan-dialog-counter" class="text-sm text-gray-500" aria-live="polite"></span>
+      <button type="button" data-plan-next aria-label="Pianta successiva"><span>Successiva</span> →</button>
+    </div>
+  </dialog>
+
+  <style>
+    .plan-open:focus-visible { outline: 3px solid #E73C3E; outline-offset: -3px; }
+    .plan-dialog { border: 0; border-radius: .5rem; padding: 0; margin: auto; width: min(1100px, calc(100% - 32px)); max-width: none; max-height: calc(100dvh - 32px); background: white; color: #3C3C3C; box-shadow: 0 20px 80px #0005; }
+    .plan-dialog::backdrop { background: rgba(0,0,0,.84); }
+    .plan-dialog-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; border-bottom: 1px solid #E5E5E5; }
+    .plan-dialog-close { display: grid; place-items: center; width: 44px; height: 44px; flex-shrink: 0; border-radius: 50%; background: #F5F4F0; cursor: pointer; }
+    .plan-dialog-close:hover { background: #E5E5E5; }
+    .plan-dialog-image { display: flex; align-items: center; justify-content: center; height: min(72dvh, 850px); padding: 12px; }
+    .plan-dialog-image img { width: 100%; height: 100%; object-fit: contain; }
+    .plan-dialog-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 16px; border-top: 1px solid #E5E5E5; }
+    .plan-dialog-nav button { min-height: 44px; padding: 8px; font-weight: 600; cursor: pointer; }
+    .plan-dialog-nav button:hover { color: #E73C3E; }
+    .plan-dialog button:focus-visible { outline: 2px solid #E73C3E; outline-offset: 2px; }
+    @media (max-width: 767px) {
+      .plan-dialog { width: calc(100% - 16px); max-height: calc(100dvh - 16px); }
+      .plan-dialog-toolbar { padding: 12px 16px; }
+      .plan-dialog-image { height: min(65dvh, 650px); padding: 4px; }
+    }
+  </style>
+  <script>
+  (() => {
+    const dialog = document.getElementById('plan-dialog');
+    const buttons = [...document.querySelectorAll('[data-plan-index]')];
+    const image = document.getElementById('plan-dialog-image');
+    const title = document.getElementById('plan-dialog-title');
+    const counter = document.getElementById('plan-dialog-counter');
+    let index = 0;
+    let trigger = null;
+    let previousOverflow = '';
+    const show = next => {
+      index = (next + buttons.length) % buttons.length;
+      const plan = buttons[index].dataset;
+      title.textContent = plan.planTitle;
+      image.src = plan.planSrc;
+      image.alt = plan.planAlt;
+      counter.textContent = `${index + 1} / ${buttons.length}`;
+    };
+    buttons.forEach((button, number) => button.addEventListener('click', () => {
+      trigger = button;
+      show(number);
+      previousOverflow = document.documentElement.style.overflow;
+      document.documentElement.style.overflow = 'hidden';
+      dialog.showModal();
+    }));
+    dialog.querySelector('.plan-dialog-close').addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-plan-prev]').addEventListener('click', () => show(index - 1));
+    dialog.querySelector('[data-plan-next]').addEventListener('click', () => show(index + 1));
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('keydown', event => {
+      if (event.key === 'ArrowLeft') { event.preventDefault(); show(index - 1); }
+      if (event.key === 'ArrowRight') { event.preventDefault(); show(index + 1); }
+    });
+    dialog.addEventListener('close', () => {
+      document.documentElement.style.overflow = previousOverflow;
+      trigger?.focus({ preventScroll: true });
+    });
+  })();
+  </script>
 
   <!-- ============================================
        6.7 — CAPITOLATO IN LINGUAGGIO ACQUIRENTE
