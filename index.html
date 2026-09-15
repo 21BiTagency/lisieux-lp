@@ -731,16 +731,30 @@
   <!-- ============================================
        6.8 — DOVE SI TROVA
        ============================================ -->
-  <section class="py-16 lg:py-24 bg-white border-t border-brand-border">
+  <section id="posizione" class="py-16 lg:py-24 bg-white border-t border-brand-border">
+    <style>
+      #posizione .nearby-places { list-style: none; padding: 0; }
+      #posizione .nearby-places li { display: flex; align-items: baseline; gap: .65rem; }
+      #posizione .place-number { flex: 0 0 1.5rem; width: 1.5rem; height: 1.5rem; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #244f40; color: #fff; font-size: .75rem; font-weight: 700; }
+      #posizione .place-number--outside { background: #f0f0ed; color: #60645f; }
+      #posizione .map-link:focus-visible { outline: 3px solid #244f40; outline-offset: 4px; }
+    </style>
     <div class="container mx-auto px-4 lg:px-8 max-w-5xl">
       <div class="text-center mb-12">
         <h2 class="text-3xl lg:text-4xl font-bold mb-3">Dove si trova</h2>
         <p class="text-lg text-gray-600">Albignasego, località San Giacomo. Tutto a portata di passeggiata.</p>
       </div>
-      <div class="rounded-lg overflow-hidden shadow-md">
-        <img src="/assets/img/mappa-zona.jpg?v=2" alt="Vista satellitare zona San Giacomo, Albignasego"
-             class="w-full h-auto" loading="lazy">
-      </div>
+      <figure>
+        <a class="map-link block rounded-lg overflow-hidden shadow-md" href="/assets/img/mappa-lisieux-3d-pin-20260916.webp" target="_blank" rel="noopener" aria-label="Ingrandisci la mappa di Residenza Lisieux in una nuova scheda">
+          <img src="/assets/img/mappa-lisieux-3d-pin-20260916.webp"
+               srcset="/assets/img/mappa-lisieux-3d-pin-20260916-640.webp 640w, /assets/img/mappa-lisieux-3d-pin-20260916-960.webp 960w, /assets/img/mappa-lisieux-3d-pin-20260916.webp 1672w"
+               sizes="(min-width: 1024px) 960px, calc(100vw - 32px)"
+               alt="Mappa illustrativa 3D di San Giacomo: Residenza Lisieux in rosso e cinque pin verdi numerati, corrispondenti ai servizi nell’elenco sottostante."
+               width="1672" height="941" class="block w-full h-auto" loading="lazy" decoding="async">
+          <span class="block bg-brand-gray px-4 py-3 text-center text-sm font-semibold">Ingrandisci la mappa <span aria-hidden="true">↗</span></span>
+        </a>
+        <figcaption class="mt-3 text-sm text-gray-500 text-center">I pin 1–5 corrispondono ai servizi nell’elenco. I punti 6–10 si trovano fuori dall’inquadratura.</figcaption>
+      </figure>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-10 lg:mt-12">
         <div>
           <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
@@ -749,19 +763,19 @@
             </svg>
             A piedi
           </h3>
-          <ul class="space-y-2 text-gray-700">
-            <li><strong>Parco Giallo</strong> — 150 m</li>
-            <li><strong>Pizzeria Umby Pizza</strong> — 180 m</li>
-            <li><strong>Nido In Famiglia Piccoli Raggi Di Sole</strong> — 300 m</li>
-            <li><strong>Campo sportivo ASD San Giacomo</strong> — 350 m</li>
-            <li><strong>Supermercato A&amp;O</strong> — 400 m</li>
-            <li><strong>Trattoria Dalla Nena</strong> — 400 m</li>
-            <li><strong>Capolinea autobus</strong> — 450 m</li>
-            <li><strong>Scuola dell'infanzia</strong> — 450 m</li>
-            <li><strong>Scuola Primaria Aldo Moro</strong> — 500 m</li>
-            <li><strong>Parrocchia di San Giacomo</strong> — 650 m</li>
-            <li>Ottica, ambulatorio veterinario, barberia, attività di quartiere — entro 350 m</li>
-          </ul>
+          <ol class="nearby-places space-y-2 text-gray-700" role="list">
+            <li><span class="place-number" aria-hidden="true">1</span><span><strong>Parco Giallo</strong> — 150&nbsp;m</span></li>
+            <li><span class="place-number" aria-hidden="true">2</span><span><strong>Pizzeria Umby Pizza</strong> — 180&nbsp;m</span></li>
+            <li><span class="place-number" aria-hidden="true">3</span><span><strong>Nido In Famiglia Piccoli Raggi Di Sole</strong> — 300&nbsp;m</span></li>
+            <li><span class="place-number" aria-hidden="true">4</span><span><strong>Campo sportivo ASD San Giacomo</strong> — 350&nbsp;m</span></li>
+            <li><span class="place-number" aria-hidden="true">5</span><span><strong>Supermercato A&amp;O</strong> — 400&nbsp;m</span></li>
+            <li><span class="place-number place-number--outside" aria-hidden="true">6</span><span><strong>Trattoria Dalla Nena</strong> — 400&nbsp;m</span></li>
+            <li><span class="place-number place-number--outside" aria-hidden="true">7</span><span><strong>Capolinea autobus</strong> — 450&nbsp;m</span></li>
+            <li><span class="place-number place-number--outside" aria-hidden="true">8</span><span><strong>Scuola dell'infanzia</strong> — 450&nbsp;m</span></li>
+            <li><span class="place-number place-number--outside" aria-hidden="true">9</span><span><strong>Scuola Primaria Aldo Moro</strong> — 500&nbsp;m</span></li>
+            <li><span class="place-number place-number--outside" aria-hidden="true">10</span><span><strong>Parrocchia di San Giacomo</strong> — 650&nbsp;m</span></li>
+          </ol>
+          <p class="mt-3 text-gray-700">Ottica, ambulatorio veterinario, barberia, attività di quartiere — entro 350 m</p>
         </div>
         <div>
           <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
