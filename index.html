@@ -60,6 +60,18 @@
     body { font-family: 'Figtree', system-ui, sans-serif; }
     .energy-row { transition: width 0.6s ease-out; }
 
+    .hero-video-toggle {
+      position: absolute; right: 1rem; bottom: 1rem; z-index: 20;
+      display: grid; place-items: center; width: 42px; height: 42px;
+      color: white; background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.5);
+      border-radius: 50%; cursor: pointer;
+    }
+    .hero-video-toggle:hover { background: rgba(0,0,0,.7); }
+    .hero-video-toggle:focus-visible { outline: 3px solid white; outline-offset: 3px; }
+    .hero-video-toggle[hidden], .hero-icon-pause { display: none; }
+    .hero-video-toggle[data-playing="true"] .hero-icon-play { display: none; }
+    .hero-video-toggle[data-playing="true"] .hero-icon-pause { display: block; }
+
     /* Lite-youtube — riempi tutto il box e centra il poster */
     lite-youtube {
       width: 100% !important;
@@ -222,18 +234,25 @@
        6.2 — HERO
        ============================================ -->
   <section class="relative bg-neutral-900">
-    <!-- MOBILE/TABLET: immagine intera (object-contain) su sfondo blurato + testo sotto -->
+    <!-- MOBILE/TABLET: video intero con poster di attesa + testo sotto -->
     <div class="lg:hidden">
       <div class="relative aspect-[16/9] overflow-hidden bg-neutral-900">
-        <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
+        <img src="/assets/img/hero-luce-senza-auto-20260915.jpg"
              alt=""
              aria-hidden="true"
              class="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70"
              loading="eager">
-        <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
-             alt="Rendering Residenza Lisieux, Albignasego"
-             class="relative w-full h-full object-contain"
-             loading="eager" fetchpriority="high">
+        <video data-hero-video="mobile" muted loop playsinline preload="none"
+               poster="/assets/img/hero-luce-senza-auto-20260915.jpg"
+               aria-label="Residenza Lisieux, dal giorno al tramonto"
+               class="relative w-full h-full object-contain">
+          Rendering Residenza Lisieux, Albignasego.
+        </video>
+        <button type="button" class="hero-video-toggle" data-hero-toggle="mobile"
+                aria-label="Riproduci animazione" aria-pressed="false" hidden>
+          <svg class="hero-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="hero-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+        </button>
       </div>
       <div class="container mx-auto px-4 py-8">
         <p class="text-white/80 text-xs font-medium uppercase tracking-wider mb-3">
@@ -260,10 +279,12 @@
 
     <!-- DESKTOP: hero classica con overlay -->
     <div class="hidden lg:block relative h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
-      <img src="/assets/img/hero-rendering.jpg?v=2026-05-24-2"
-           alt="Rendering Residenza Lisieux, Albignasego"
-           class="absolute inset-0 w-full h-full object-cover"
-           loading="eager" fetchpriority="high">
+      <video data-hero-video="desktop" muted loop playsinline preload="none"
+             poster="/assets/img/hero-luce-senza-auto-20260915.jpg"
+             aria-label="Residenza Lisieux, dal giorno al tramonto"
+             class="absolute inset-0 w-full h-full object-cover">
+        Rendering Residenza Lisieux, Albignasego.
+      </video>
       <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/15 to-transparent"></div>
 
       <div class="relative z-10 h-full container mx-auto px-8 flex flex-col justify-end pb-20">
@@ -287,8 +308,66 @@
           </a>
         </div>
       </div>
+      <button type="button" class="hero-video-toggle" data-hero-toggle="desktop"
+              aria-label="Riproduci animazione" aria-pressed="false" hidden>
+        <svg class="hero-icon-play" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="hero-icon-pause" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></svg>
+      </button>
     </div>
   </section>
+
+  <script>
+  (() => {
+    const source = '/assets/video/lisieux-luce-senza-auto-20260915.mp4';
+    const wide = matchMedia('(min-width: 1024px)');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const videos = [...document.querySelectorAll('[data-hero-video]')];
+    let userPaused = false;
+    let manuallyStarted = false;
+    const activeVideo = () => videos.find(video => video.dataset.heroVideo === (wide.matches ? 'desktop' : 'mobile'));
+    const visible = video => {
+      const rect = video.getBoundingClientRect();
+      return rect.width > 0 && rect.bottom > 64 && rect.top < innerHeight;
+    };
+    const canAutoPlay = () => manuallyStarted || (!reduced.matches && !navigator.connection?.saveData);
+    const start = video => {
+      if (!video.getAttribute('src')) video.src = source;
+      video.muted = true;
+      video.play().catch(() => {});
+    };
+    const sync = () => {
+      const current = activeVideo();
+      videos.forEach(video => {
+        if (video !== current || document.hidden || userPaused || !canAutoPlay() || !visible(video)) video.pause();
+        else start(video);
+      });
+    };
+    videos.forEach(video => {
+      const button = document.querySelector(`[data-hero-toggle="${video.dataset.heroVideo}"]`);
+      button.hidden = false;
+      const updateButton = () => {
+        const playing = !video.paused;
+        button.dataset.playing = String(playing);
+        button.setAttribute('aria-pressed', String(playing));
+        button.setAttribute('aria-label', playing ? 'Metti in pausa animazione' : 'Riproduci animazione');
+      };
+      video.addEventListener('play', updateButton);
+      video.addEventListener('pause', updateButton);
+      video.addEventListener('error', () => { button.hidden = true; });
+      button.addEventListener('click', () => {
+        userPaused = !video.paused;
+        if (userPaused) video.pause();
+        else { manuallyStarted = true; start(video); }
+      });
+    });
+    const observer = new IntersectionObserver(sync, { threshold: [0, 0.1] });
+    videos.forEach(video => observer.observe(video));
+    wide.addEventListener('change', sync);
+    reduced.addEventListener('change', sync);
+    document.addEventListener('visibilitychange', sync);
+    sync();
+  })();
+  </script>
 
   <!-- ============================================
        6.3 — VIDEO
@@ -348,7 +427,7 @@
     <div class="container mx-auto px-4 lg:px-8 max-w-6xl">
       <div class="text-center mb-12 lg:mb-16">
         <h2 class="text-3xl lg:text-4xl font-bold mb-3">Tipologie disponibili</h2>
-        <p class="text-lg text-gray-600">9 unità ancora disponibili su tre piani. Tre tipologie pensate per famiglie e coppie.</p>
+        <p class="text-lg text-gray-600">8 unità ancora disponibili su tre piani. Tre tipologie pensate per famiglie e coppie.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -397,7 +476,11 @@
         <!-- Card 3 — Quadrilocale terrazza -->
         <article class="border border-brand-border rounded-lg overflow-hidden hover:shadow-lg transition flex flex-col">
           <div class="bg-brand-gray p-6 md:min-h-[9.5rem]">
-            <span class="inline-block bg-brand-red text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">6 unità disponibili</span>
+            <span class="inline-flex items-center gap-1.5 bg-green-600 text-white text-xs font-semibold px-3 py-1 rounded-full mb-3">
+              <s class="opacity-75 font-normal">6 unità</s>
+              <span aria-hidden="true">→</span>
+              <span>5 disponibili</span>
+            </span>
             <h3 class="text-xl font-bold leading-snug">Quadrilocale con terrazza abitabile</h3>
           </div>
           <div class="p-6 space-y-3 flex-1">
