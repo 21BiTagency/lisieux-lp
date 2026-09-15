@@ -237,14 +237,14 @@
     <!-- MOBILE/TABLET: video intero con poster di attesa + testo sotto -->
     <div class="lg:hidden">
       <div class="relative aspect-[16/9] overflow-hidden bg-neutral-900">
-        <img src="/assets/img/hero-luce-senza-auto-20260915.jpg"
+        <img src="/assets/img/hero-alba-iniziale-20260916.jpg"
              alt=""
              aria-hidden="true"
              class="absolute inset-0 w-full h-full object-cover scale-110 blur-2xl opacity-70"
              loading="eager">
         <video data-hero-video="mobile" muted loop playsinline preload="none"
-               poster="/assets/img/hero-luce-senza-auto-20260915.jpg"
-               aria-label="Residenza Lisieux, dal giorno al tramonto"
+               poster="/assets/img/hero-alba-iniziale-20260916.jpg"
+               aria-label="Residenza Lisieux, dall’alba alla luce del giorno e ritorno"
                class="relative w-full h-full object-contain">
           Rendering Residenza Lisieux, Albignasego.
         </video>
@@ -280,8 +280,8 @@
     <!-- DESKTOP: hero classica con overlay -->
     <div class="hidden lg:block relative h-[80vh] min-h-[500px] max-h-[800px] overflow-hidden">
       <video data-hero-video="desktop" muted loop playsinline preload="none"
-             poster="/assets/img/hero-luce-senza-auto-20260915.jpg"
-             aria-label="Residenza Lisieux, dal giorno al tramonto"
+             poster="/assets/img/hero-alba-iniziale-20260916.jpg"
+             aria-label="Residenza Lisieux, dall’alba alla luce del giorno e ritorno"
              class="absolute inset-0 w-full h-full object-cover">
         Rendering Residenza Lisieux, Albignasego.
       </video>
@@ -318,7 +318,7 @@
 
   <script>
   (() => {
-    const source = '/assets/video/lisieux-luce-senza-auto-20260915.mp4';
+    const source = '/assets/video/lisieux-alba-giorno-alba-20260916.mp4';
     const wide = matchMedia('(min-width: 1024px)');
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const videos = [...document.querySelectorAll('[data-hero-video]')];
